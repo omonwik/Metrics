@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Подсчет метрик текста</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Snippets/Checkbox.css" rel="stylesheet" />
+    <link href="~/Content/Snippets/TextArea.css" rel="stylesheet" />
+    <link href="~/Content/Snippets/FileInput.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div style="margin-top: 10%; margin-left: 15%;">
+            <h3>Введите текст:</h3>
+            <textarea id="txtarea" rows="20" cols="120" class="topcoat-textarea"></textarea>
+
+            <label class="fileContainer">
+                <span id="message"></span>
+                <input id="inputFile" type="file" accept=".txt" />
+            </label>
+
+            <ul id="results" class="list-group"></ul>
+
+            <div class="[ form-group ]">
+                <input type="checkbox" name="filter" id="mostUsedSymbols" autocomplete="off" />
+                <div class="[ btn-group ]">
+                    <label for="mostUsedSymbols" class="[ btn btn-default ]">
+                        <span class="[ glyphicon glyphicon-ok ]"></span>
+                        <span> </span>
+                    </label>
+                    <label for="mostUsedSymbols" class="[ btn btn-default active ]">
+                        Самые используемые символы
+                    </label>
+                </div>
+            </div>
+
+            <div class="[ form-group ]">
+                <input type="checkbox" name="filter" id="symbolsCount" autocomplete="off" />
+                <div class="[ btn-group ]">
+                    <label for="symbolsCount" class="[ btn btn-default ]">
+                        <span class="[ glyphicon glyphicon-ok ]"></span>
+                        <span> </span>
+                    </label>
+                    <label for="symbolsCount" class="[ btn btn-default active ]">
+                        Количество символов
+                    </label>
+                </div>
+            </div>
+
+            <div class="[ form-group ]">
+                <input type="checkbox" name="filter" id="wordsCount" autocomplete="off" />
+                <div class="[ btn-group ]">
+                    <label for="wordsCount" class="[ btn btn-default ]">
+                        <span class="[ glyphicon glyphicon-ok ]"></span>
+                        <span> </span>
+                    </label>
+                    <label for="wordsCount" class="[ btn btn-default active ]">
+                        Количество слов
+                    </label>
+                </div>
+            </div>
+
+            <div class="[ form-group ]">
+                <input type="checkbox" name="filter" id="exclamatorySentencesCount" autocomplete="off" />
+                <div class="[ btn-group ]">
+                    <label for="exclamatorySentencesCount" class="[ btn btn-default ]">
+                        <span class="[ glyphicon glyphicon-ok ]"></span>
+                        <span> </span>
+                    </label>
+                    <label for="exclamatorySentencesCount" class="[ btn btn-default active ]">
+                        Количество восклицательных предложений
+                    </label>
+                </div>
+            </div>
+
+            <div class="[ form-group ]">
+                <input type="checkbox" name="filter" id="interrogativeSentencesCount" autocomplete="off" />
+                <div class="[ btn-group ]">
+                    <label for="interrogativeSentencesCount" class="[ btn btn-default ]">
+                        <span class="[ glyphicon glyphicon-ok ]"></span>
+                        <span> </span>
+                    </label>
+                    <label for="interrogativeSentencesCount" class="[ btn btn-default active ]">
+                        Количество вопросительных предложений
+                    </label>
+                </div>
+            </div>
+
+            <br />
+
+            <button id="processBtn" class="btn btn-success" style="margin-bottom: 20px;">Подсчет выбранных метрик</button>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <script src="~/Scripts/Metrics.js"></script>
+</body>
+</html>

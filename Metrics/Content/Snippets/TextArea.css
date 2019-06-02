@@ -1,0 +1,17 @@
+﻿.topcoat-textarea {
+    vertical-align: top;
+    resize: none;
+    outline: 0;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 4px;
+    line-height: 1.313rem;
+    border: 1px solid hsla(168,8%,65%,1);
+    background-color: hsla(0,100%,100%,1);
+    box-shadow: inset 0 1px 0 hsla(0,0%,0%,.23);
+    color: hsla(0,0%,27%,1);
+    letter-spacing: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
