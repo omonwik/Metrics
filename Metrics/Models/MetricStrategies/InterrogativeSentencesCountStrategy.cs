@@ -1,34 +1,26 @@
-﻿using System.Linq;
+﻿using Metrics.Models.MetricStrategies;
+using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Metrics.Models.Interfaces;
 
 namespace Metrics.Models
 {
-    public class InterrogativeSentencesCount : IMetricsStrategy
+    public class InterrogativeSentencesCountStrategy : MetricStrategy
     {
-        public string Text { get; }
+        public override string Predicate { get => "Количество вопросительных предложений: "; protected set { Predicate = value; } }
 
-        public string Result { get; private set; }
-
-        public InterrogativeSentencesCount(string text)
+        public InterrogativeSentencesCountStrategy(string text)
         {
             Text = Regex.Replace(text, @"[?]+", "?");
         }
 
-        public void Process()
-        {
-            CountInterrogativeSentences();
-        }
-
         private void CountInterrogativeSentences()
         {
-            Result = "Количество вопросительных предложений: " + Text.Where(ch => ch == '?').ToList().Count.ToString();
+            Result = Predicate + Text.Where(ch => ch == '?').ToList().Count;
         }
 
-        public async Task ProcessAsync()
+        public override void Process()
         {
-            await Task.Run(Process);
+            CountInterrogativeSentences();
         }
     }
 }

@@ -1,31 +1,24 @@
-﻿using Metrics.Models.Interfaces;
-using System.Threading.Tasks;
+﻿using Metrics.Models.MetricStrategies;
 
 namespace Metrics.Models
 {
-    public class SymbolsCountStrategy : IMetricsStrategy
+    public class SymbolsCountStrategy : MetricStrategy
     {
-        public string Text { get; }
-        public string Result { get; private set; }
+        public override string Predicate { get => "Количество символов в тексте: "; protected set { Predicate = value; } }
 
         public SymbolsCountStrategy(string text)
         {
             Text = text;
         }
 
-        public void Process()
+        public override void Process()
         {
             CalculateSymbolsCount();
         }
 
         private void CalculateSymbolsCount()
         {
-            Result = "Количество символов в тексте: " + Text.Length.ToString();
-        }
-
-        public async Task ProcessAsync()
-        {
-            await Task.Run(Process);
+            Result = Predicate + Text.Length;
         }
     }
 }

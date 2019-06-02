@@ -6,7 +6,7 @@
 
     $("#processBtn").bind("click", () => {
         $("#results").empty();
-        $.post("api/Process", { filters: mapFiltersToObject("filter"), content: $("#txtarea").val() })
+        $.post("api/Process", { filter: mapFiltersToObject("filter"), text: $("#txtarea").val() })
             .done((data) => {
                 $(data).each((id, element) => {
                     $("#results").append(`<li class='list-group-item'>${element}</li>`);
@@ -15,14 +15,14 @@
     });
 
     $("#inputFile").bind("change", async () => {
-        var input = document.getElementById("inputFile").files[0];
+        let input = document.getElementById("inputFile").files[0];
         $("#message").text(fileLoading);
-        var text = await readFileAsync(input);
+        let text = await readFileAsync(input);
         $("#txtarea").val(text);
         $("#message").text(askLoadFile);
     });
 
-    function readFileAsync(file) {
+    const readFileAsync = file => {
         return new Promise((resolve, reject) => {
             let reader = new FileReader();
 
@@ -36,8 +36,8 @@
         })
     }
 
-    function mapFiltersToObject(name) {
-        var filters = {};
+    const mapFiltersToObject = name => {
+        let filters = {};
         $(`input[name="${name}"`).each((id, element) => {
             let name = $(element).prop("id");
             let checked = $(element).is(":checked");

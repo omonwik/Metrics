@@ -1,34 +1,26 @@
-﻿using System.Linq;
+﻿using Metrics.Models.MetricStrategies;
+using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Metrics.Models.Interfaces;
 
 namespace Metrics.Models
 {
-    public class ExclamatorySentencesCount : IMetricsStrategy
+    public class ExclamatorySentencesCountStrategy : MetricStrategy
     {
-        public string Text { get; }
+        public override string Predicate { get => "Количество восклицательных предложений: "; protected set { Predicate = value; } }
 
-        public string Result { get; private set; }
-
-        public ExclamatorySentencesCount(string text)
+        public ExclamatorySentencesCountStrategy(string text)
         {
             Text = Regex.Replace(text, @"[!]+", "!");
         }
 
-        public void Process()
+        public override void Process()
         {
             CountExclamatorySentences();
         }
 
         private void CountExclamatorySentences()
         {
-            Result = "Количество восклицательных предложений: " + Text.Where(ch => ch == '!').ToList().Count.ToString();
-        }
-
-        public async Task ProcessAsync()
-        {
-            await Task.Run(Process);
+            Result = Predicate + Text.Where(ch => ch == '!').ToList().Count;
         }
     }
 }

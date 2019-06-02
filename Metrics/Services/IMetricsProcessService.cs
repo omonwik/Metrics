@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Metrics.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using Metrics.Models;
 
 namespace Metrics.Services
 {
     public interface IMetricsProcessService
     {
-        Task<IEnumerable<string>> Process(Text text);
+        IEnumerable<string> ProcessMetrics(ProcessInfo processInfo);
+        Task<IEnumerable<string>> ProcessMetricsAsync(ProcessInfo processInfo);
     }
 }

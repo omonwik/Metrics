@@ -140,14 +140,16 @@
     </Compile>
     <Compile Include="Helpers\ExtensionMethods.cs" />
     <Compile Include="Infrastructure\SimpleInjectorInitializer.cs" />
+    <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\MetricStrategies\ExclamatorySentencesCountStrategy.cs" />
     <Compile Include="Models\Interfaces\IMetricsStrategy.cs" />
     <Compile Include="Models\MetricStrategies\InterrogativeSentencesCountStrategy.cs" />
     <Compile Include="Models\MetricStrategies\LettersCountStrategy.cs" />
+    <Compile Include="Models\MetricStrategies\MetricStrategy.cs" />
     <Compile Include="Models\MetricStrategies\MostUsedSymbolStrategy.cs" />
     <Compile Include="Models\MetricStrategies\SymbolsCountStrategy.cs" />
     <Compile Include="Models\MetricStrategies\WordsCountStrategy.cs" />
-    <Compile Include="Models\Text.cs" />
+    <Compile Include="Models\ProcessInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IMetricsProcessEngine.cs" />
     <Compile Include="Services\IMetricsProcessService.cs" />
@@ -167,6 +169,10 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -187,18 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />

@@ -1,29 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using Metrics.Helpers;
+using Metrics.Models.MetricStrategies;
+using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Metrics.Helpers;
-using Metrics.Models.Interfaces;
 
 namespace Metrics.Models
 {
-    public class MostUsedSymbolStrategy : IMetricsStrategy
+    public class MostUsedSymbolStrategy : MetricStrategy
     {
-        public string Text { get; }
-        public string Result { get; private set; }
+        public override string Predicate { get => "Самый(е) используемый(е) символ(ы): "; protected set { Predicate = value; } }
 
         public MostUsedSymbolStrategy(string text)
         {
             Text = text.ToLowerInvariant().Replace(" ", string.Empty);
         }
 
-        public void Process()
+        public override void Process()
         {
             SearchMostUsedSymbol();
-        }
-
-        public async Task ProcessAsync()
-        {
-            await Task.Run(Process);
         }
 
         private void SearchMostUsedSymbol()
@@ -42,7 +35,7 @@ namespace Metrics.Models
 
             var result = chars.Where(k => k.Value == chars.Values.Max()).Select(k => k.Key).ToList();
 
-            Result = "Самый(е) используемый(е) символ(ы): " + string.Join(", ", result);
+            Result = Predicate + string.Join(", ", result);
         }
     }
 }

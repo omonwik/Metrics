@@ -14,24 +14,32 @@ namespace Metrics.Services
             _metricsProcessEngine = metricsProcessEngine;
         }
 
-        public async Task<IEnumerable<string>> Process(Text text)
+        public IEnumerable<string> ProcessMetrics(ProcessInfo processInfo)
         {
-            var strategies = FilterMetricStrategies(text);
+            var strategies = FilterMetricStrategies(processInfo);
+            var result = _metricsProcessEngine.ProcessMetrics(strategies);
+
+            return result;
+        }
+
+        public async Task<IEnumerable<string>> ProcessMetricsAsync(ProcessInfo processInfo)
+        {
+            var strategies = FilterMetricStrategies(processInfo);
             var result = await _metricsProcessEngine.ProcessMetricsAsync(strategies);
 
             return result;
         }
 
-        private List<IMetricsStrategy> FilterMetricStrategies(Text text)
+        private List<IMetricsStrategy> FilterMetricStrategies(ProcessInfo processInfo)
         {
             var strategies = new List<IMetricsStrategy>();
 
-            if (text.Filters.ExclamatorySentencesCount) strategies.Add(new ExclamatorySentencesCount(text.Content));
-            if (text.Filters.InterrogativeSentencesCount) strategies.Add(new InterrogativeSentencesCount(text.Content));
-            if (text.Filters.MostUsedSymbols) strategies.Add(new MostUsedSymbolStrategy(text.Content));
-            if (text.Filters.SymbolsCount) strategies.Add(new SymbolsCountStrategy(text.Content));
-            if (text.Filters.WordsCount) strategies.Add(new WordsCountStrategy(text.Content));
-            if (text.Filters.LettersCount) strategies.Add(new LettersCountStrategy(text.Content));
+            if (processInfo.Filter.ExclamatorySentencesCount) strategies.Add(new ExclamatorySentencesCountStrategy(processInfo.Text));
+            if (processInfo.Filter.InterrogativeSentencesCount) strategies.Add(new InterrogativeSentencesCountStrategy(processInfo.Text));
+            if (processInfo.Filter.MostUsedSymbols) strategies.Add(new MostUsedSymbolStrategy(processInfo.Text));
+            if (processInfo.Filter.SymbolsCount) strategies.Add(new SymbolsCountStrategy(processInfo.Text));
+            if (processInfo.Filter.WordsCount) strategies.Add(new WordsCountStrategy(processInfo.Text));
+            if (processInfo.Filter.LettersCount) strategies.Add(new LettersCountStrategy(processInfo.Text));
 
             return strategies;
         }

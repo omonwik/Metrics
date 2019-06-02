@@ -1,28 +1,26 @@
-﻿using Metrics.Models.Interfaces;
+﻿using Metrics.Models.MetricStrategies;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Metrics.Models
 {
-    public class LettersCountStrategy : IMetricsStrategy
+    public class LettersCountStrategy : MetricStrategy
     {
-        public string Text { get; }
+        public override string Predicate { get => "Количество букв в тексте: "; protected set { Predicate = value; } }
 
-        public string Result { get; private set; }
 
         public LettersCountStrategy(string text)
         {
             Text = text;
         }
 
-        public void Process()
+        public override void Process()
         {
-            Result = "Количество букв в тексте: " + Text.Where(ch => char.IsLetter(ch)).ToArray().Length.ToString();
+            CalculateLetters();
         }
 
-        public async Task ProcessAsync()
+        private void CalculateLetters()
         {
-            await Task.Run(Process);
+            Result = Predicate + Text.Where(ch => char.IsLetter(ch)).ToArray().Length;
         }
     }
 }

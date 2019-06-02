@@ -16,9 +16,9 @@ namespace Metrics.Controllers.API
 
         [HttpPost]
         [Route("api/Process")]
-        public async Task<IHttpActionResult> Process(Text text)
+        public async Task<IHttpActionResult> Process(ProcessInfo processInfo)
         {
-            var result = await _metricsProcessService.Process(text);
+            var result = await _metricsProcessService.ProcessMetricsAsync(processInfo);
             return Ok(result);
         }
     }
