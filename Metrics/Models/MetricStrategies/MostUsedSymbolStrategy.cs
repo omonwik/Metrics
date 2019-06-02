@@ -16,10 +16,9 @@ namespace Metrics.Models
             Text = text.ToLowerInvariant().Replace(" ", string.Empty);
         }
 
-        public string Process()
+        public void Process()
         {
             SearchMostUsedSymbol();
-            return Result;
         }
 
         public async Task ProcessAsync()
@@ -43,7 +42,7 @@ namespace Metrics.Models
 
             var result = chars.Where(k => k.Value == chars.Values.Max()).Select(k => k.Key).ToList();
 
-            Result = "Самый(е) используемый(ые) символ(ы): " + string.Join(", ", result);
+            Result = "Самый(е) используемый(е) символ(ы): " + string.Join(", ", result);
         }
     }
 }

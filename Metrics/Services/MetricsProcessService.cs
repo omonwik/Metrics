@@ -31,6 +31,7 @@ namespace Metrics.Services
             if (text.Filters.MostUsedSymbols) strategies.Add(new MostUsedSymbolStrategy(text.Content));
             if (text.Filters.SymbolsCount) strategies.Add(new SymbolsCountStrategy(text.Content));
             if (text.Filters.WordsCount) strategies.Add(new WordsCountStrategy(text.Content));
+            if (text.Filters.LettersCount) strategies.Add(new LettersCountStrategy(text.Content));
 
             return strategies;
         }

@@ -15,10 +15,9 @@ namespace Metrics.Models
             Text = Regex.Replace(text, @"\s+", " ");
         }
 
-        public string Process()
+        public void Process()
         {
             CalculateWordsCount();
-            return Result;
         }
 
         private void CalculateWordsCount()

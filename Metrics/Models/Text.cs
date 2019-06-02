@@ -19,5 +19,6 @@ namespace Metrics.Models
         public bool WordsCount { get; set; }
         public bool ExclamatorySentencesCount { get; set; }
         public bool InterrogativeSentencesCount { get; set; }
+        public bool LettersCount { get; set; }
     }
 }

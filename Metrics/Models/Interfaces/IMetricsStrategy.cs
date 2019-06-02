@@ -6,7 +6,7 @@ namespace Metrics.Models.Interfaces
     {
         string Text { get; }
         string Result { get; }
-        string Process();
+        void Process();
         Task ProcessAsync();
     }
 }

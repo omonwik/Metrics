@@ -143,6 +143,7 @@
     <Compile Include="Models\MetricStrategies\ExclamatorySentencesCount.cs" />
     <Compile Include="Models\Interfaces\IMetricsStrategy.cs" />
     <Compile Include="Models\MetricStrategies\InterrogativeSentencesCount.cs" />
+    <Compile Include="Models\MetricStrategies\LettersCountStrategy.cs" />
     <Compile Include="Models\MetricStrategies\MostUsedSymbolStrategy.cs" />
     <Compile Include="Models\MetricStrategies\SymbolsCountStrategy.cs" />
     <Compile Include="Models\MetricStrategies\WordsCountStrategy.cs" />

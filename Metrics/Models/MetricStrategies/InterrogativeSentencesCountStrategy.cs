@@ -16,10 +16,9 @@ namespace Metrics.Models
             Text = Regex.Replace(text, @"[?]+", "?");
         }
 
-        public string Process()
+        public void Process()
         {
             CountInterrogativeSentences();
-            return Result;
         }
 
         private void CountInterrogativeSentences()

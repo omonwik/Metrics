@@ -1,26 +1,23 @@
 ﻿using Metrics.Models.Interfaces;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Metrics.Models
 {
-    public class SymbolsCountStrategy : IMetricsStrategy
+    public class LettersCountStrategy : IMetricsStrategy
     {
         public string Text { get; }
+
         public string Result { get; private set; }
 
-        public SymbolsCountStrategy(string text)
+        public LettersCountStrategy(string text)
         {
             Text = text;
         }
 
         public void Process()
         {
-            CalculateSymbolsCount();
-        }
-
-        private void CalculateSymbolsCount()
-        {
-            Result = "Количество символов в тексте: " + Text.Length.ToString();
+            Result = "Количество букв в тексте: " + Text.Where(ch => char.IsLetter(ch)).ToArray().Length.ToString();
         }
 
         public async Task ProcessAsync()
