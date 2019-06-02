@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication3.Helpers;
-using WebApplication3.Models.Interfaces;
+using Metrics.Helpers;
+using Metrics.Models.Interfaces;
 
-namespace WebApplication3.Models
+namespace Metrics.Models
 {
     public class MostUsedSymbolStrategy : IMetricsStrategy
     {

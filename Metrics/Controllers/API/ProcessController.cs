@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Http;
-using WebApplication3.Models;
-using WebApplication3.Services;
+using Metrics.Models;
+using Metrics.Services;
 
-namespace WebApplication3.Controllers.API
+namespace Metrics.Controllers.API
 {
     public class ProcessController : ApiController
     {

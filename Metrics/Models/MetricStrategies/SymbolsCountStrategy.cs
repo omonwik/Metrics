@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
-using WebApplication3.Models.Interfaces;
+using Metrics.Models.Interfaces;
 
-namespace WebApplication3.Models
+namespace Metrics.Models
 {
     public class SymbolsCountStrategy : IMetricsStrategy
     {

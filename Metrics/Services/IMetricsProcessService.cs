@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using WebApplication3.Models;
+using Metrics.Models;
 
-namespace WebApplication3.Services
+namespace Metrics.Services
 {
     public interface IMetricsProcessService
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace WebApplication3
+namespace Metrics
 {
     public static class WebApiConfig
     {

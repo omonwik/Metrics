@@ -1,8 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using WebApplication3.Models.Interfaces;
+using Metrics.Models.Interfaces;
 
-namespace WebApplication3.Models
+namespace Metrics.Models
 {
     public class WordsCountStrategy : IMetricsStrategy
     {

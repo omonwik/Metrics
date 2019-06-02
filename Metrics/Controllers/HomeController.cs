@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace WebApplication3.Controllers
+namespace Metrics.Controllers
 {
     public class HomeController : Controller
     {

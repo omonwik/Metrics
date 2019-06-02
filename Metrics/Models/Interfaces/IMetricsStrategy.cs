@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace WebApplication3.Models.Interfaces
+namespace Metrics.Models.Interfaces
 {
     public interface IMetricsStrategy
     {
