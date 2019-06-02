@@ -7,7 +7,7 @@ namespace Metrics.Models.MetricStrategies
     {
         public string Text { get; protected set; }
         public string Result { get; protected set; }
-        public abstract string Predicate { get; protected set; }
+        public abstract string Predicate { get; }
 
         public abstract void Process();
 

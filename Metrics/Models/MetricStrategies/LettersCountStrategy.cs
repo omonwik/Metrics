@@ -5,7 +5,7 @@ namespace Metrics.Models
 {
     public class LettersCountStrategy : MetricStrategy
     {
-        public override string Predicate { get => "Количество букв в тексте: "; protected set { Predicate = value; } }
+        public override string Predicate { get => "Количество букв в тексте: ";}
 
 
         public LettersCountStrategy(string text)

@@ -6,7 +6,7 @@ namespace Metrics.Models
 {
     public class ExclamatorySentencesCountStrategy : MetricStrategy
     {
-        public override string Predicate { get => "Количество восклицательных предложений: "; protected set { Predicate = value; } }
+        public override string Predicate { get => "Количество восклицательных предложений: "; }
 
         public ExclamatorySentencesCountStrategy(string text)
         {

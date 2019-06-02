@@ -10,7 +10,7 @@ namespace Metrics.Models
             Text = Regex.Replace(text, @"\s+", " ");
         }
 
-        public override string Predicate { get => "Количество слов в тексте: "; protected set { Predicate = value; } }
+        public override string Predicate { get => "Количество слов в тексте: ";}
 
         public override void Process()
         {

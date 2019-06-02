@@ -4,7 +4,7 @@ namespace Metrics.Models
 {
     public class SymbolsCountStrategy : MetricStrategy
     {
-        public override string Predicate { get => "Количество символов в тексте: "; protected set { Predicate = value; } }
+        public override string Predicate { get => "Количество символов в тексте: ";}
 
         public SymbolsCountStrategy(string text)
         {

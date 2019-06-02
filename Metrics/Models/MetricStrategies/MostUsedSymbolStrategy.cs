@@ -7,7 +7,7 @@ namespace Metrics.Models
 {
     public class MostUsedSymbolStrategy : MetricStrategy
     {
-        public override string Predicate { get => "Самый(е) используемый(е) символ(ы): "; protected set { Predicate = value; } }
+        public override string Predicate { get => "Самый(е) используемый(е) символ(ы): ";}
 
         public MostUsedSymbolStrategy(string text)
         {

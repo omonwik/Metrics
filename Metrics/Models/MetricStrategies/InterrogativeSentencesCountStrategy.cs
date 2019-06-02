@@ -6,7 +6,7 @@ namespace Metrics.Models
 {
     public class InterrogativeSentencesCountStrategy : MetricStrategy
     {
-        public override string Predicate { get => "Количество вопросительных предложений: "; protected set { Predicate = value; } }
+        public override string Predicate { get => "Количество вопросительных предложений: "; }
 
         public InterrogativeSentencesCountStrategy(string text)
         {
